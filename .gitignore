@@ -2,3 +2,4 @@
 .idea/
 media/
 local_settings.py
+/node_modules/

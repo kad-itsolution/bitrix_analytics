@@ -16,6 +16,8 @@ Including another URLconf
 import settings
 from django.contrib import admin
 from django.urls import path, include
+
+from bitrix_analysis.views import default
 from post_currency.views import *
 from django.conf.urls.static import static
 
@@ -25,8 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', start),
-    path('tasks/', include('tasks.urls')),
-    path('ones/', include('ones_fresh_unf_with_b24.urls')),
+    path('search_for_bitrix/<int:start>/<int:finish>', default, name="first_100")
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

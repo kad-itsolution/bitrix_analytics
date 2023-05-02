@@ -35,7 +35,7 @@ SECRET_KEY = 'UxWXNk8hFEJYUkstPtBdtNgvqKfOFbME'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'start',
     'tasks',
     'ones_fresh_unf_with_b24',
+    'bitrix_analysis',
 ]
 
 MIDDLEWARE = [
@@ -149,7 +150,7 @@ ilogger = MuteLogger()
 
 # local settings
 try:
-    from local_settings import *
+    from _local_settings import *
 except ImportError:
     from warnings import warn
 
